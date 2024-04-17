@@ -18,4 +18,10 @@ class User < ApplicationRecord
     def generate_auth_token
         self.auth_token = SecureRandom.urlsafe_base64
     end
+
+    def reset_password(new_password)
+        self.password = new_password
+        self.auth_token = nil
+        save!
+      end
   end

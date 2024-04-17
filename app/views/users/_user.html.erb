@@ -9,4 +9,26 @@
     <%= user.email %>
   </p>
 
+  <p>
+  <label>
+    <input type="checkbox" id="showAuthToken">
+    Show Auth Token
+  </label>
+</p>
+
+<p id="authToken" style="display: none;">
+  <strong>Auth Token:</strong>
+  <%= user.auth_token %>
+</p>
+
+<script>
+  document.getElementById('showAuthToken').addEventListener('change', function() {
+    var authTokenElement = document.getElementById('authToken');
+    if (this.checked) {
+      authTokenElement.style.display = 'block';
+    } else {
+      authTokenElement.style.display = 'none';
+    }
+  });
+</script>
 </div>
