@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless logged_in?
-      redirect_to root_url
+      redirect_to root_url and return
     end
   end
 end
